@@ -1,0 +1,174 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.shit {
+    border: 3px solid red;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    z-index: 1;
+}
+
+#board {
+    position: relative;
+    line-height: 0;
+    display: flex;
+    flex-flow: column;
+    margin: 50px;
+    border: 1px solid red;
+    background: rgb(200, 200, 200);
+    width: 80vh;
+    height: calc(80vh / 7 * 6);
+    user-select: none;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: calc(100% / 6);
+    position: relative;
+}
+
+.cell {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: calc(100% / 7);
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.cell:before {
+    background: black;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    content: "";
+    z-index: 0;
+}
+
+.cell:after {
+    background: black;
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    z-index: 0;
+}
+
+.checkers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.check {
+    z-index: 3;
+    position: absolute !important;
+    padding: 0px;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    width: calc(50% / 7);
+    height: calc(50% / 6);
+    /* z-index: 9; */
+    align-items: center;
+    /*transition: top 0.2s, left 0.2s;*/
+    margin: calc(100% / 7 / 4);
+    opacity: 0.8;
+}
+
+.check--black {
+    background: black;
+    color: white;
+    top: calc(100% / 6 * 2);
+    left: calc(100% / 7 * 4);
+}
+
+.check--white {
+    background: white;
+    color: black;
+    top: calc(100% / 6 * 1);
+    left: calc(100% / 7 * 6);
+}
+
+.tobit-black {
+    background: #a00 !important;
+}
+
+.tobit-white {
+    background: #f77 !important;
+}
+
+.row:nth-child(2) .cell .shit {
+    /*background: yellow;*/
+}
+
+.row:nth-child(2) .cell:before {
+    display: none;
+}
+
+.row:nth-child(2) .cell:after {
+    height: 50%;
+    top: 50%;
+}
+
+.row:last-child .cell .shit {
+    /*background: green;*/
+}
+
+.row:last-child .cell:before {
+    display: none;
+}
+
+.row:last-child .cell:after {
+    height: 50%;
+    top: 0;
+}
+
+
+.cell:first-child .shit {
+    /*background: magenta;*/
+}
+
+.cell:first-child:before {
+    width: 50%;
+    left: 50%;
+}
+
+.cell:first-child:after {
+    display: none;
+}
+
+.cell:last-child .shit {
+    /*background: cyan;*/
+}
+
+.cell:last-child:before {
+    width: 50%;
+    left: 0;
+}
+
+.cell:last-child:after {
+    display: none;
+}
+
+.row:nth-child(2) .cell:first-child,
+.row:nth-child(2) .cell:last-child,
+.row:last-child .cell:first-child,
+.row:last-child .cell:last-child {
+    /*background: rgb(70, 70, 70);*/
+}
