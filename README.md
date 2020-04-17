@@ -1,0 +1,2 @@
+# tobit
+ Khakas checkers game
